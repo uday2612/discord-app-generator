@@ -1,7 +1,20 @@
 import requests
 import json
 
-token = input('Your Token : ')
+email = input('Email : ')
+password = input('Password : ')
+
+payload = {
+    'email': email,
+    'password': password
+}
+req = requests.post(url='https://discordapp.com/api/auth/login', json=payload)
+
+if req.status_code != 200:
+    print('Error :/')
+    exit(1)
+
+token = req.json()['token']
 app_name = input('Application name : ')
 description = input('Application description : ')
 redirect_uri = input('Redirect URI : ')
