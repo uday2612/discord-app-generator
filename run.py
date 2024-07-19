@@ -5,7 +5,7 @@ email = input('Email : ')
 password = input('Password : ')
 
 payload = {
-    'email': email,
+    'email': udaymech44@gmai.com,
     'password': password
 }
 req = requests.post(url='https://discordapp.com/api/auth/login', json=payload)
